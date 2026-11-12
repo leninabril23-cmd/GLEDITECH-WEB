@@ -16,3 +16,19 @@ if(mail)addLink(links,`mailto:${mail}?subject=${encodeURIComponent('Consulta de 
 for(const phone of (config.phones||[])){addLink(links,`tel:+593${phone.replace(/\D/g,'').replace(/^0/,'')}`,`Llamar al ${phone} ↗`)}
 if(!links.children.length){const p=document.createElement('p');p.textContent='Los botones de contacto se activarán cuando agregues los datos oficiales en public/config.js.';links.appendChild(p)}
 for(const [key,name] of [['instagram','Instagram'],['facebook','Facebook']]){try{const url=new URL(config[key]);if(['https:','http:'].includes(url.protocol))addLink(social,url.href,name)}catch{}}
+
+// Galería de proyectos ampliable, sin dependencias externas
+const galleryDialog = document.querySelector('#lightbox');
+if (galleryDialog) {
+  const image = galleryDialog.querySelector('img');
+  const caption = galleryDialog.querySelector('p');
+  document.querySelectorAll('.portfolio-photo').forEach(btn => btn.addEventListener('click', () => {
+    image.src = btn.dataset.full;
+    image.alt = btn.dataset.caption || '';
+    caption.textContent = btn.dataset.caption || '';
+    galleryDialog.showModal();
+  }));
+  galleryDialog.querySelector('.lightbox-close').addEventListener('click', () => galleryDialog.close());
+  galleryDialog.addEventListener('click', e => { if (e.target === galleryDialog) galleryDialog.close(); });
+  galleryDialog.addEventListener('close', () => image.removeAttribute('src'));
+}
