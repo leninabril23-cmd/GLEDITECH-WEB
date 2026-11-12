@@ -1,11 +1,12 @@
-// EDITA SOLO ESTE ARCHIVO para colocar los datos oficiales antes de publicar.
+// Contactos oficiales de GLEDITECH. Actualizar aquí cuando cambien.
 window.GLEDITECH_CONFIG = {
-  email: '',                 // Ejemplo: contacto@tu-dominio.com
-  whatsapp: '',              // Código país + número, solo dígitos. Ejemplo: 593999999999
-  phoneDisplay: '',          // Teléfono legible
-  city: 'Ecuador',           // Reemplaza por ciudad oficial si deseas
-  instagram: 'https://www.instagram.com/gleditech_ingenieria/',             // URL completa del perfil oficial
-  facebook: '',              // URL completa de la página oficial
-  address: '',               // Dirección comercial oficial, opcional
+  email: 'gleditech@icloud.com',
+  whatsapp: '593959417944', // Contacto principal: 0959417944
+  phoneDisplay: '0959417944 / 0992971814',
+  phones: ['0959417944', '0992971814'],
+  city: 'Ecuador',
+  instagram: 'https://www.instagram.com/gleditech_ingenieria/',
+  facebook: '',
+  address: '',
   year: 2026
 };
